@@ -4,17 +4,19 @@ This repository contains a proof of concept for state management in React applic
 
 ## Features
 
-- Context API
+- Context API, Zustand, and Redux Toolkit for state management
 - Custom Hooks
 - React TanStack Query
 - Husky and Lint-Staged for code quality
+- BiomeJS for linting and formatting
+- Vitest for testing
 
 ## Getting Started
 
 To get started, clone the repository and install the dependencies:
 
 ```bash
-git clone [https://github.com/PawelWywiol/poc-state-management](https://github.com/PawelWywiol/poc-state-management)
+git clone https://github.com/PawelWywiol/poc-state-management
 cd poc-state-management
 npm install
 ```
