@@ -5,8 +5,9 @@ import { beforeEach, describe, expect, it, vi } from 'vitest';
 
 import type { Product } from '@/services/products.types';
 
-import { PocContextApi } from '@/components/poc-context-api';
-import { PocZustand } from '@/components/poc-zustand';
+import { PocContextApi } from '@/components/poc/poc-context-api';
+import { PocRedux } from '@/components/poc/poc-redux';
+import { PocZustand } from '@/components/poc/poc-zustand';
 
 vi.mock('@/hooks/useProducts');
 vi.mock('@/lib/storage', () => ({
@@ -31,7 +32,7 @@ const mockProducts: Product[] = [
   },
 ];
 
-const Components = [PocZustand, PocContextApi];
+const Components = [PocZustand, PocContextApi, PocRedux];
 
 describe.each(Components)('PocZustand', (Component) => {
   beforeEach(() => {

@@ -1,8 +1,7 @@
-import { Products } from './products';
-import { Summary } from './summary';
-
 import { useProducts } from '@/hooks/useProducts';
 import { useCartStore } from '@/store/zustand/cart.provider';
+import { Products } from '../products';
+import { Summary } from '../summary';
 
 export const PocZustand = () => {
   const { data, isFetching, error } = useProducts();

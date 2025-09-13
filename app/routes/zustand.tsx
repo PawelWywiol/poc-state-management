@@ -1,4 +1,4 @@
-import { PocZustand } from '@/components/poc-zustand';
+import { PocZustand } from '@/components/poc/poc-zustand';
 
 const Page = () => <PocZustand />;
 

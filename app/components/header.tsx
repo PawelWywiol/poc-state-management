@@ -8,6 +8,9 @@ export const Header = () => (
         <li>
           <a href="/zustand">Zustand</a>
         </li>
+        <li>
+          <a href="/redux">Redux</a>
+        </li>
       </ul>
     </nav>
   </header>
