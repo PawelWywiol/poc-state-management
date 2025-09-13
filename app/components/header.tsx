@@ -11,6 +11,9 @@ export const Header = () => (
         <li>
           <a href="/redux">Redux</a>
         </li>
+        <li>
+          <a href="/mobx">MobX</a>
+        </li>
       </ul>
     </nav>
   </header>
