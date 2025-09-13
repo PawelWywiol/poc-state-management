@@ -14,6 +14,9 @@ export const Header = () => (
         <li>
           <a href="/mobx">MobX</a>
         </li>
+        <li>
+          <a href="/akita">Akita</a>
+        </li>
       </ul>
     </nav>
   </header>

@@ -20,6 +20,7 @@
     "prepare": "husky"
   },
   "dependencies": {
+    "@datorama/akita": "^8.0.1",
     "@radix-ui/react-slot": "^1.2.3",
     "@react-router/fs-routes": "^7.8.2",
     "@react-router/node": "^7.8.2",
