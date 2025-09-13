@@ -1,7 +1,8 @@
+import { Products } from './products';
+import { Summary } from './summary';
+
 import { useProducts } from '@/hooks/useProducts';
 import { CartConsumer, CartProvider } from '@/store/context-api/cart.provider';
-import { Products } from '../products';
-import { Summary } from '../summary';
 
 export const PocContextApi = () => {
   const { data, isFetching, error } = useProducts();
@@ -15,6 +16,7 @@ export const PocContextApi = () => {
       <CartConsumer>
         {({ items, addItem, removeItem }) => (
           <>
+            <h1>Context API Cart</h1>
             <Products products={data} addItem={addItem} />
             <Summary items={items} removeItem={removeItem} />
           </>

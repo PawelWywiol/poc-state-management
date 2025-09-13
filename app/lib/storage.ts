@@ -8,7 +8,12 @@ export const saveCartItemsToLocalStorage = (items: CartItem[]): void => {
     return;
   }
 
-  globalThis.localStorage.setItem(CART_STORAGE_KEY, JSON.stringify(items));
+  const storageState = {
+    state: { items },
+    version: 0,
+  };
+
+  globalThis.localStorage.setItem(CART_STORAGE_KEY, JSON.stringify(storageState));
 };
 
 export const loadCartItemsFromLocalStorage = (): CartItem[] => {
@@ -16,10 +21,13 @@ export const loadCartItemsFromLocalStorage = (): CartItem[] => {
 
   try {
     const stored = globalThis.localStorage.getItem(CART_STORAGE_KEY);
-    const items = stored ? JSON.parse(stored) : [];
+    const state = stored ? JSON.parse(stored) : null;
+    if (!state || !('state' in state) || !('items' in state.state)) {
+      return [];
+    }
 
-    if (Array.isArray(items)) {
-      return items.filter((item) => isCartItem(item));
+    if (Array.isArray(state.state.items)) {
+      return state.state.items.filter((item: unknown) => isCartItem(item));
     }
   } catch {}
 

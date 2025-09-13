@@ -2,6 +2,7 @@ import { Links, Meta, Outlet, Scripts, ScrollRestoration } from 'react-router';
 
 import '@/styles/global.css';
 
+import { Header } from './components/header';
 import { ClientProvider } from './providers/query-client-provider';
 
 export const Layout = ({ children }: { children: React.ReactNode }) => (
@@ -14,6 +15,7 @@ export const Layout = ({ children }: { children: React.ReactNode }) => (
     </head>
     <body>
       <ClientProvider>
+        <Header />
         <main>{children}</main>
       </ClientProvider>
       <ScrollRestoration />

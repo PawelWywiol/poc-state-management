@@ -1,4 +1,4 @@
-import { PocContextApi } from '@/components/poc-context-api/poc-context-api';
+import { PocContextApi } from '@/components/poc-context-api';
 
 const Index = () => <PocContextApi />;
 

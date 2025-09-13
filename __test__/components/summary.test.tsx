@@ -124,7 +124,7 @@ describe('Summary', () => {
     expect(aside).toBeInTheDocument();
 
     const ARTICLES_COUNT = 3;
-    const articles = screen.getAllByRole('article');
+    const articles = screen.getAllByRole('listitem');
     expect(articles).toHaveLength(ARTICLES_COUNT);
 
     const HEADINGS_COUNT = 2;

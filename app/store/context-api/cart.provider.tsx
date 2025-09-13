@@ -6,39 +6,17 @@ import type { Product } from '@/services/products.types';
 import { CartContext } from './cart.context';
 
 import type { CartContextType, CartItem } from '../store.types';
+import { removeCartItem, updateCartItems } from '../store.utils';
 
 export const CartProvider = ({ children }: { children: ReactNode }) => {
   const [items, setItems] = useState<CartItem[]>([]);
 
   const addItem = (product: Product) => {
-    const itemExists = items.find((item) => item.product.id === product.id);
-
-    if (!itemExists) {
-      setItems((currentItems) => [
-        ...currentItems,
-        {
-          product,
-          quantity: 1,
-        },
-      ]);
-
-      return;
-    }
-
-    setItems((currentItems) =>
-      currentItems.map((item) =>
-        item.product.id === product.id
-          ? {
-              product: item.product,
-              quantity: item.quantity + 1,
-            }
-          : item,
-      ),
-    );
+    setItems((currentItems) => updateCartItems(currentItems, product));
   };
 
   const removeItem = (id: number) => {
-    setItems((currentItems) => currentItems.filter((item) => item.product.id !== id));
+    setItems((currentItems) => removeCartItem(currentItems, id));
   };
 
   const value: CartContextType = {

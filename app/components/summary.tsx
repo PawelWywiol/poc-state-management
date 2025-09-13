@@ -13,29 +13,31 @@ export const Summary = ({
 
   return (
     <aside>
-      {items.map((item) => (
-        <article key={item.product.id}>
-          <h4>{item.product.name}</h4>
-          <p>
-            price: {item.quantity} x ${item.product.price} = ${item.product.price * item.quantity}
-          </p>
-          <Button variant="ghost" onClick={() => removeItem(item.product.id)}>
-            X
-          </Button>
-        </article>
-      ))}
-      <hr />
-      <article>
-        <h3>
-          Total{' '}
-          {!!totalItems && (
-            <span>
-              for {totalItems} {totalItems === 1 ? 'item' : 'items'}
-            </span>
-          )}
-        </h3>
-        <p>${totalPrice}</p>
-      </article>
+      <ul>
+        {items.map((item) => (
+          <li key={item.product.id}>
+            <h4>{item.product.name}</h4>
+            <p>
+              price: {item.quantity} x ${item.product.price} = ${item.product.price * item.quantity}
+            </p>
+            <Button variant="ghost" onClick={() => removeItem(item.product.id)}>
+              X
+            </Button>
+          </li>
+        ))}
+        <hr />
+        <li>
+          <h3>
+            Total{' '}
+            {!!totalItems && (
+              <span>
+                for {totalItems} {totalItems === 1 ? 'item' : 'items'}
+              </span>
+            )}
+          </h3>
+          <p>${totalPrice}</p>
+        </li>
+      </ul>
     </aside>
   );
 };
