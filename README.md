@@ -4,7 +4,7 @@ This repository contains a proof of concept for state management in React applic
 
 ## Features
 
-- Context API, Zustand, and Redux Toolkit for state management
+- Context API, Zustand, Redux Toolkit, MobX, Akita for state management
 - Custom Hooks
 - React TanStack Query
 - Husky and Lint-Staged for code quality
