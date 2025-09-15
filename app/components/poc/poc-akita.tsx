@@ -1,7 +1,7 @@
 import type { Product } from '@/services/products.types';
 
 import { useProducts } from '@/hooks/useProducts';
-import { CartProvider, useCartStore } from '@/store/akita/cart.provider';
+import { useCartStore } from '@/store/akita/cart.provider';
 import { Products } from '../products';
 import { Summary } from '../summary';
 
@@ -23,9 +23,9 @@ export const PocAkita = () => {
   if (!data) return <div>No products found</div>;
 
   return (
-    <CartProvider>
+    <>
       <h1>Akita Cart</h1>
       <PocAkitaContent products={data} />
-    </CartProvider>
+    </>
   );
 };

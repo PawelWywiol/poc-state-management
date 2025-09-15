@@ -1,18 +1,18 @@
 import { loadCartItemsFromLocalStorage, saveCartItemsToLocalStorage } from '@/lib/storage';
 import type { Product } from '@/services/products.types';
 
-import type { CartContextType } from '../store.types';
+import type { CartContextType, CartItem } from '../store.types';
 import { removeCartItem, updateCartItems } from '../store.utils';
 
 export class CartService implements CartContextType {
-  private _items: import('../store.types').CartItem[] = [];
+  private _items: CartItem[] = [];
   private listeners: Set<() => void> = new Set();
 
   constructor() {
     this.loadFromStorage();
   }
 
-  get items(): import('../store.types').CartItem[] {
+  get items(): CartItem[] {
     return this._items;
   }
 
