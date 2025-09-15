@@ -4,7 +4,6 @@ import type { Product } from '@/services/products.types';
 
 import { useProducts } from '@/hooks/useProducts';
 import { useCartStore } from '@/store/mobx/cart.hooks';
-import { CartProvider } from '@/store/mobx/cart.provider';
 import { Products } from '../products';
 import { Summary } from '../summary';
 
@@ -26,9 +25,9 @@ export const PocMobX = () => {
   if (!data) return <div>No products found</div>;
 
   return (
-    <CartProvider>
+    <>
       <h1>MobX Cart</h1>
       <PocMobXContent products={data} />
-    </CartProvider>
+    </>
   );
 };
